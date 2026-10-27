@@ -1,0 +1,75 @@
+.hero {
+  position: relative;
+  display: flex;
+  min-height: max(100svh, 680px);
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Deep blue overhead, warming toward the horizon */
+.hero .sky {
+  background: linear-gradient(
+    180deg,
+    #1a2740 0%,
+    #2c3d5c 26%,
+    #6b6f8e 48%,
+    #c69184 66%,
+    #f0b58a 76%,
+    #f6d2b0 84%
+  );
+}
+
+.hero .valley {
+  background: none;
+}
+
+.ground {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 14%;
+  background: linear-gradient(180deg, rgb(34 44 67 / 0), #222c43);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--nav-h);
+  padding-bottom: 26vh;
+}
+
+.content {
+  max-width: 44rem;
+}
+
+.eyebrow {
+  margin-bottom: 1.4rem;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgb(255 236 214 / 0.9);
+}
+
+.title {
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  font-weight: 300;
+  text-shadow: 0 10px 50px rgb(20 24 40 / 0.25);
+}
+
+.lead {
+  max-width: 29rem;
+  margin: 1.6rem 0 2.2rem;
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: rgb(255 255 255 / 0.82);
+}
+
+@media (max-width: 560px) {
+  .inner {
+    justify-content: flex-start;
+    padding-top: calc(var(--nav-h) + 10vh);
+  }
+}

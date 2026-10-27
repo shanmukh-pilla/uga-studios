@@ -1,0 +1,60 @@
+.section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: max(92svh, 640px);
+  padding-block: var(--section-y);
+  overflow: hidden;
+  text-align: center;
+}
+
+.fadeIn {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 26%;
+  background: linear-gradient(180deg, var(--cloud-white), rgb(248 250 252 / 0));
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-top: 1.8rem;
+  font-size: var(--fs-display);
+  line-height: 1;
+}
+
+.lead {
+  margin-top: 1.6rem;
+  max-width: 26rem;
+  font-size: var(--fs-lead);
+  color: var(--ink-80);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.8rem;
+  margin-top: 2.4rem;
+}
+
+.email {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.95rem;
+  color: var(--ink-80);
+  background: linear-gradient(currentColor, currentColor) 0 calc(100% - 10px) / 100% 1px no-repeat;
+  transition: color var(--dur-quick) var(--ease-air);
+}
+
+.email:hover {
+  color: var(--ink);
+}

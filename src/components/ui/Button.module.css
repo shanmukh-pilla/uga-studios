@@ -1,0 +1,101 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  min-height: 48px;
+  padding: 0 1.45rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-soft) var(--ease-air),
+    color var(--dur-soft) var(--ease-air),
+    border-color var(--dur-soft) var(--ease-air),
+    transform var(--dur-soft) var(--ease-air),
+    box-shadow var(--dur-soft) var(--ease-air);
+}
+
+.sm {
+  min-height: 44px;
+  padding: 0 1.15rem;
+  font-size: 0.82rem;
+}
+
+.arrow {
+  transition: transform var(--dur-soft) var(--ease-air);
+}
+
+.button:hover .arrow {
+  transform: translateX(4px);
+}
+
+.solid {
+  background: var(--ink);
+  color: var(--cloud-white);
+  box-shadow: 0 10px 30px -12px rgb(8 10 12 / 0.45);
+}
+
+.solid:hover {
+  background: #1a2530;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px -14px rgb(8 10 12 / 0.5);
+}
+
+.outline {
+  background: rgb(255 255 255 / 0.28);
+  border-color: rgb(8 10 12 / 0.22);
+  color: var(--ink);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.outline:hover {
+  background: rgb(255 255 255 / 0.7);
+  border-color: rgb(8 10 12 / 0.4);
+}
+
+.ghost {
+  background: rgb(255 255 255 / 0.1);
+  border-color: rgb(255 255 255 / 0.45);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.ghost:hover {
+  background: rgb(255 255 255 / 0.22);
+  border-color: rgb(255 255 255 / 0.8);
+}
+
+.light {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 10px 30px -14px rgb(8 10 12 / 0.35);
+}
+
+.light:hover {
+  background: var(--cloud-white);
+  transform: translateY(-1px);
+}
+
+.ghost .play {
+  background: #fff;
+  color: var(--ink);
+}
+
+.play {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-left: -0.55rem;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--cloud-white);
+  padding-left: 2px;
+}

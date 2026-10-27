@@ -1,0 +1,71 @@
+/*
+ * Uga Studios design tokens.
+ * Every page inherits these — change the world here, not per section.
+ */
+:root {
+  /* Palette */
+  --cloud-white: #f8fafc;
+  --soft-sky: #dff3ff;
+  --atmos-blue: #a8ddf5;
+  --deep-blue: #3e7899;
+  --ink: #080a0c;
+
+  --ink-80: rgb(8 10 12 / 0.8);
+  --ink-60: rgb(8 10 12 / 0.6);
+  --ink-40: rgb(8 10 12 / 0.4);
+  --ink-12: rgb(8 10 12 / 0.12);
+  --ink-06: rgb(8 10 12 / 0.06);
+  --white-80: rgb(255 255 255 / 0.8);
+  --white-60: rgb(255 255 255 / 0.6);
+  --white-20: rgb(255 255 255 / 0.2);
+
+  /* Sky moods — the same sky at different hours */
+  --sky-day: linear-gradient(180deg, #9fd3ef 0%, #c4e6f8 38%, #e7f5fd 68%, var(--cloud-white) 100%);
+  --sky-morning: linear-gradient(180deg, #cbe9f9 0%, #e8f5fc 55%, var(--cloud-white) 100%);
+  --sky-dusk: linear-gradient(180deg, #23243c 0%, #4b4460 30%, #a86f72 62%, #f0b58a 86%, #f7d3ae 100%);
+  --sky-night: linear-gradient(180deg, #05070b 0%, #0a1019 45%, #122033 80%, #1b2c42 100%);
+  --sky-dawn: linear-gradient(180deg, #1b2c42 0%, #6d8fae 18%, #bfe1f4 40%, #eaf6fd 62%, var(--cloud-white) 100%);
+
+  /* Type */
+  --font-display: 'Inter Tight', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --fs-display: clamp(2.75rem, 1.4rem + 5.6vw, 6.25rem);
+  --fs-h1: clamp(2.25rem, 1.3rem + 3.8vw, 4.5rem);
+  --fs-h2: clamp(1.9rem, 1.3rem + 2.4vw, 3.25rem);
+  --fs-h3: clamp(1.35rem, 1.1rem + 0.9vw, 1.85rem);
+  --fs-lead: clamp(1.05rem, 0.98rem + 0.35vw, 1.3rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-micro: 0.72rem;
+
+  --lh-tight: 1.02;
+  --lh-snug: 1.15;
+  --lh-body: 1.6;
+  --tracking-display: -0.035em;
+  --tracking-eyebrow: 0.32em;
+
+  /* Space */
+  --gutter: clamp(1.25rem, 0.6rem + 3vw, 4rem);
+  --container: 1320px;
+  --section-y: clamp(6rem, 4rem + 9vw, 12rem);
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4.5rem;
+
+  /* Shape */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  /* Motion — air moving through the site */
+  --ease-air: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-quick: 240ms;
+  --dur-soft: 600ms;
+
+  --nav-h: 76px;
+}

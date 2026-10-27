@@ -1,0 +1,11 @@
+.page {
+  background: #0c1422;
+}
+
+/* The light keeps falling as you scroll: dusk blue → deeper blue → night */
+.evening {
+  position: relative;
+  background:
+    radial-gradient(90% 40% at 60% 0%, rgb(240 181 138 / 0.12), transparent 70%),
+    linear-gradient(180deg, #222c43 0%, #1c2740 30%, #152036 65%, #0c1422 100%);
+}

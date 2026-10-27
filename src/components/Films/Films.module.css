@@ -1,0 +1,177 @@
+.section {
+  position: relative;
+  padding-block: calc(var(--section-y) * 1.4) var(--section-y);
+  overflow: hidden;
+  color: #fff;
+  background: #2a2840;
+}
+
+/* Daylight gives way to dusk */
+.section .sky {
+  background: linear-gradient(
+    180deg,
+    var(--cloud-white) 0%,
+    #dcebf6 5%,
+    #aab8d6 13%,
+    #6a6a8e 24%,
+    #3a3552 36%,
+    #4b4460 48%,
+    #a86f72 68%,
+    #f0b58a 84%,
+    #f7d3ae 100%
+  );
+}
+
+/* ...and dusk gives way to the Labs night */
+.duskToNight {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 26%;
+  background: linear-gradient(180deg, rgb(5 7 11 / 0), rgb(5 7 11 / 0.7) 55%, #05070b);
+  pointer-events: none;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: var(--ink);
+  pointer-events: none;
+}
+
+.barTop {
+  top: 0;
+}
+
+.barBottom {
+  bottom: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  padding-top: clamp(2rem, 8vw, 7rem);
+}
+
+.head {
+  margin-top: 1.8rem;
+}
+
+.name {
+  font-size: clamp(3.5rem, 1rem + 10vw, 10rem);
+  line-height: 0.95;
+  font-weight: 300;
+  letter-spacing: -0.055em;
+  text-shadow: 0 10px 60px rgb(40 30 60 / 0.25);
+}
+
+.statement {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 300;
+  letter-spacing: var(--tracking-display);
+  color: rgb(255 240 225 / 0.92);
+}
+
+.forms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2.4rem;
+  max-width: 44rem;
+}
+
+.forms li {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgb(255 255 255 / 0.32);
+  background: rgb(255 255 255 / 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: var(--fs-small);
+}
+
+.screen {
+  position: relative;
+  margin: clamp(3.5rem, 7vw, 6rem) 0 0;
+  aspect-ratio: 2.39 / 1;
+  min-height: 360px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 60px 120px -50px rgb(10 8 20 / 0.8);
+}
+
+.screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(20 18 36 / 0.65), rgb(20 18 36 / 0) 60%);
+  z-index: 1;
+}
+
+.caption {
+  position: absolute;
+  z-index: 2;
+  left: clamp(1.5rem, 4vw, 3.5rem);
+  bottom: clamp(1.5rem, 4vw, 3.5rem);
+  display: grid;
+  justify-items: start;
+  gap: 0.8rem;
+  max-width: 26rem;
+}
+
+.badge {
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: rgb(255 225 195 / 0.95);
+}
+
+.captionTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.captionText {
+  font-size: var(--fs-small);
+  color: rgb(255 255 255 / 0.75);
+}
+
+.captionActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.frameMarks {
+  position: absolute;
+  inset: clamp(0.9rem, 2vw, 1.5rem);
+  z-index: 2;
+  pointer-events: none;
+  --c: rgb(255 255 255 / 0.55);
+  background:
+    linear-gradient(var(--c), var(--c)) top left / 22px 1px,
+    linear-gradient(var(--c), var(--c)) top left / 1px 22px,
+    linear-gradient(var(--c), var(--c)) top right / 22px 1px,
+    linear-gradient(var(--c), var(--c)) top right / 1px 22px,
+    linear-gradient(var(--c), var(--c)) bottom left / 22px 1px,
+    linear-gradient(var(--c), var(--c)) bottom left / 1px 22px,
+    linear-gradient(var(--c), var(--c)) bottom right / 22px 1px,
+    linear-gradient(var(--c), var(--c)) bottom right / 1px 22px;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+  .screen {
+    aspect-ratio: auto;
+    min-height: 440px;
+  }
+}

@@ -1,0 +1,240 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  transition:
+    background-color var(--dur-soft) var(--ease-air),
+    box-shadow var(--dur-soft) var(--ease-air),
+    backdrop-filter var(--dur-soft) var(--ease-air);
+}
+
+.scrolled {
+  background: rgb(248 250 252 / 0.72);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  box-shadow: 0 1px 0 var(--ink-06);
+}
+
+.dark {
+  color: var(--cloud-white);
+}
+
+.scrolled.dark {
+  background: rgb(8 10 12 / 0.45);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.08);
+}
+
+.dark .link {
+  color: rgb(248 250 252 / 0.8);
+}
+
+.dark .link:hover,
+.dark .link[aria-current='page'] {
+  color: #fff;
+}
+
+.dark .cta {
+  background: var(--cloud-white);
+  color: var(--ink);
+}
+
+.dark .burger span {
+  background: var(--cloud-white);
+}
+
+.bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: var(--nav-h);
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-right: auto;
+}
+
+.links {
+  display: flex;
+  gap: clamp(1.25rem, 2.4vw, 2.6rem);
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--ink-80);
+  transition: color var(--dur-quick) var(--ease-air);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.2rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--dur-soft) var(--ease-air);
+}
+
+.link:hover,
+.link[aria-current='page'] {
+  color: var(--ink);
+}
+
+/* Active page: a single point of light beneath the label */
+.link[aria-current='page']::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -0.2rem;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  padding: 0 1.2rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--cloud-white);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color var(--dur-soft) var(--ease-air);
+}
+
+.cta svg {
+  transition: transform var(--dur-soft) var(--ease-air);
+}
+
+.cta:hover {
+  background: #1a2530;
+}
+
+.cta:hover svg {
+  transform: translateX(3px);
+}
+
+.toggle {
+  display: none;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-right: -10px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.burger {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 10px;
+}
+
+.burger span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--ink);
+  transition: transform var(--dur-soft) var(--ease-air), top var(--dur-soft) var(--ease-air);
+}
+
+.burger span:first-child {
+  top: 0;
+}
+
+.burger span:last-child {
+  top: 8.5px;
+}
+
+.burgerOpen span:first-child {
+  top: 4.25px;
+  transform: rotate(45deg);
+}
+
+.burgerOpen span:last-child {
+  top: 4.25px;
+  transform: rotate(-45deg);
+}
+
+/* Mobile sheet: the menu opens into the sky */
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--nav-h) + 3rem) var(--gutter) calc(2.5rem + env(safe-area-inset-bottom));
+  background:
+    radial-gradient(120% 60% at 80% 0%, rgb(255 255 255 / 0.9), transparent 60%),
+    var(--sky-morning);
+}
+
+.sheetLinks {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.sheetLinks a {
+  display: block;
+  padding: 0.35rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 11vw, 3.4rem);
+  font-weight: 300;
+  letter-spacing: var(--tracking-display);
+  line-height: 1.1;
+}
+
+.sheetLinks a[aria-current='page'] {
+  color: var(--deep-blue);
+}
+
+.sheetCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  min-height: 56px;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--cloud-white);
+  font-weight: 500;
+}
+
+@media (max-width: 960px) {
+  .links,
+  .cta {
+    display: none;
+  }
+
+  .toggle {
+    display: grid;
+  }
+}

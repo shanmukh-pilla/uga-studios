@@ -1,0 +1,39 @@
+.section {
+  position: relative;
+  display: flex;
+  min-height: max(92svh, 620px);
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+}
+
+/* Continues the gallery's deepening blue into full night */
+.section .sky {
+  background: linear-gradient(180deg, #0c1422 0%, #0e1a2c 45%, #1c2c45 75%, #26385a 100%);
+}
+
+.section .valley {
+  background: none;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: clamp(6rem, 14vw, 11rem);
+}
+
+.eyebrow {
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: rgb(200 225 255 / 0.7);
+}
+
+.title {
+  margin: 1.4rem 0 2.4rem;
+  font-size: var(--fs-h1);
+  line-height: 1.06;
+}

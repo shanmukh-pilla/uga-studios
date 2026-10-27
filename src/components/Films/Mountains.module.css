@@ -1,0 +1,50 @@
+.range {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 62%;
+  pointer-events: none;
+}
+
+.ridge {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: calc(100% + 60px);
+  max-width: none;
+  will-change: transform;
+}
+
+/* Atmospheric perspective: the farther the ridge, the more of the sky it holds */
+.sunset .far path {
+  fill: #8d86a3;
+  opacity: 0.55;
+}
+
+.sunset .mid path {
+  fill: #4f5776;
+  opacity: 0.85;
+}
+
+.sunset .near path {
+  fill: #222c43;
+}
+
+.night .far path {
+  fill: #2a3950;
+  opacity: 0.6;
+}
+
+.night .mid path {
+  fill: #172336;
+  opacity: 0.9;
+}
+
+.night .near path {
+  fill: #0a111c;
+}
+
+@media (max-width: 700px) {
+  .range {
+    height: 48%;
+  }
+}

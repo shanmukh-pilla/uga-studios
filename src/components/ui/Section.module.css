@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink-60);
+}
+
+.light {
+  color: var(--white-80);
+}
+
+.index {
+  font-variant-numeric: tabular-nums;
+}
+
+.rule {
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.eyebrow {
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--ink-60);
+}
